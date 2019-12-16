@@ -1,0 +1,16 @@
+I have learned following things : 
+
+
+Call flow.
+Ticket resolution and Inprogress.
+SLA report.
+DCR report.
+How to do cron # and un-# .
+How to Restart a process.
+How to Shutdown a process.
+How to check mount points.
+How to perform zip and unzip operation.
+All teams name.
+How to check status of process and loading.
+Learn many commands of Unix.
+Learn many commands of SQL.

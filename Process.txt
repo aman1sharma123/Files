@@ -1,0 +1,12 @@
+select process_status,collector_id,count(1) from orv5sys.odc_stat_input_resource group by process_status,collector_id  ###TNZ
+
+
+
+
+
+
+Rahil Bhaiya ::
+
+
+ID :: 2371134	
+PASS :: Oraken#12

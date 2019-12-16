@@ -1,0 +1,36 @@
+NGDB-1
+
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1' ETL from orv5sys1.odc_stat_input_resource where
+res_path like '%PGW%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1.1' ETL from orv5sys3.odc_stat_input_resource where
+res_path like '%PGW%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL2' ETL from orv5sys2.odc_stat_input_resource where
+res_path like '%PGW%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL2.2' ETL from orv5sys4.odc_stat_input_resource where
+res_path like '%PGW%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24') order by 1 desc;
+
+NGDB-3
+
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1' ETL from orv5sys1.odc_stat_input_resource where process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1.1' ETL from orv5sys2.odc_stat_input_resource where
+process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24') order by 1 desc;
+
+NGDB-2
+
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1' ETL from orv5sys1.odc_stat_input_resource where
+res_path like '%CCN%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL1.1' ETL from orv5sys2.odc_stat_input_resource where
+res_path like '%CCN%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24') order by 1 desc;

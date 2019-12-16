@@ -1,0 +1,1 @@
+select total_kpi,met_kpi,sla_name,PERCENTAGE,to_char(sladate,'YYYY-MM-DD') sla_date ,opco_name from ORV5_ETL.SLA_SUMMARY1 where sladate like '%-09-19%' order by sladate;

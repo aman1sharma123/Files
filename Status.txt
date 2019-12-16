@@ -1,0 +1,3 @@
+select ORG_RES_NAME,PROCESS_STATUS,ORG_RES_ID from orv_sys1.odc_stat_input_resource where org_res_name like '%MemExpFile_HSS9860_34_20190923000013_1067_221_2.txt%'
+
+select * from orv_sys1.odc_stat_loading where org_res_id like '%55896005%'

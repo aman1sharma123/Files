@@ -1,0 +1,5 @@
+find . -type f -mtime +15 -exec rm -f {} \; &
+
+
+
+NIGER AIR CS16 NUG FIX PATCH

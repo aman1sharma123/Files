@@ -1,0 +1,24 @@
+
+
+
+1.cron hash
+
+2.Stop Loader ##check the server become idle
+
+3.db2 connect to RADB user orv5_etl using Teahuam#65     ###MDG
+
+
+4.db2 list tables|grep -i PART
+
+
+5.##Minimum and Maximum Partition Query
+
+db2 "select min(distinct substr(DATAPARTITIONNAME,6,8)), max(distinct substr(DATAPARTITIONNAME,6,8)), TABNAME from syscat.datapartitions where tabname in (select tabname from syscat.datapartitionexpression) and DATAPARTITIONNAME not like '%MINV%' and DATAPARTITIONNAME not like 'DATE_1900%' group by TABNAME order by 1 with ur "
+
+
+###to check partitions are their or not
+
+
+6.##Partition Query
+
+db2 "call orv5_etl.partition_management('2019-12-01','2019-12-31')" &     ###for creating partitons start_date and end_date

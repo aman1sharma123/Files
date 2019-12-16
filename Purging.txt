@@ -1,0 +1,16 @@
+1. Loader Stop
+
+
+2. Cron hash    ### wait for ideal.
+
+
+3. crontab -l|grep -i pur
+
+
+4. ls -lrt|grep -i part
+
+
+5. search for all those purging script having -45 days command(FCT_DT=`db2 -x "select 'DATE_' ||to_char(sysdate-45,'YYYYMMDD')|| '0000' from dual"`)
+
+
+6. After completion cron unhash.

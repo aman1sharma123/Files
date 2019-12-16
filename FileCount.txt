@@ -1,0 +1,1 @@
+ls|cut -c29-37|sort -n|uniq -c

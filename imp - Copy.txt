@@ -1,0 +1,464 @@
+`No action. The (buffer+cache) needs to be excluded from the used memory paramter. 
+
+learning path : linux sysadmin basics
+6731735
+I-A-AF-MCCS-HQ-SERVICEDESK
+
+
+find . -type f -mtime +10 -exec rm -f {} \; &
+IN6807961
+
+rm -rf work/ tmp/ log/ data/
+
+Credential …
+
+1751057
+RA33101T
+ramla.desktop@wipro.com
+ra@WL12345
+Deepangi
+RAMLA
+
+ VCN#109699 || PR177558
+
+IP : 10.14.97.24
+Port : 4145
+*********************
+IP : 9.184.9.13
+Port : 80
+
+syscat.tables
+
+airtelaf\2364163	
+
+airtelaf\2365282
+mlaopco#12
+
+Setwet#12
+
+For checking memory on AIX server :: svmon -G -O unit=GB
+
+for create tar : tar -cvf 123.tar 123
+
+for untar : tar -xvf
+
+bunzip2 -f *bz2 &
+>>>>>>>>>>>>>>>>>>>>
+cp -prf datastore datastore_10
+..............................................
+
+for password change for any user : passwd
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+c
+VM bin		------------->		I-AIR-AF-SS-HQ-OTH-ESXI
+
+DB2 bin		------------->		I-AIR-AF-SS-HQ-DBM-DB2
+
+
+NOC TEAM bin	------------->		I-AIR-AF-NOC-HQ-Noc_Team
+
+Network bin	------------->		I-AIR-AF-NSD-HQ 
+
+Tanzania Tapout BIN	----------> 	I-AIR-AF-TBO-HQ-FF-TABS
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+For making large CSV
+
+for i in `ls *CSV`;do cat $i >>sgw_1; done
+
+for i in `find . -type f -name "*DIM_AIR_DED_INFO_CS5.CSV"`; do cat $i >>DIM_AIR_DED_INFO_CS5_1; done
+
+for i in `find . -type f -name "*DIM_CCN_DEDICATED_INFO.CSV"`; do cat $i >>dedi_1; done
+
+for i in `find . -type f -name "*FCT_IN_DATA_CS5_STG.CSV"`; do cat $i >>data_1; done
+
+for i in `find . -type f -name "*CSV"`
+do
+cat $i >>voice_2
+rm -f $i
+done &
+
+for i in `ls *out|head -45`
+do
+
+cat $i >>ggsn_1.CSV 
+rm -f $i 
+done &
+
+DIM_CCN_DEDICATED_INFO.CSV
+DIM_CCN_ACCU_INFO.CSV
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+FOR ZAMBIA PURGING 
+
+Step 1 :- Go to Zambia ETL 2
+
+Path : /orvappl/raorv/Operational_Scripts/Partition_drop_scripts 
+
+
+	sh -x delete_SV_data.sh
+
+	sh -x DIM_ERR_DELETE.sh
+
+	sh -x Detach_N_Drop_All_Generic_auto_script.sh 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+For granting premission to user
+
+db2 "grant select on FCT_HUW_HLR to user a1313495"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+For revoke the permission from user
+
+db2 "revoke select on FCT_HUW_HLR from user a1313495"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+db2 "select * from DIM_SUBS_IN_BASE where rownum<3 with ur"
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+db2 load query table GHA_ETL.FCT_GGSN 
+
+
+ db2 connect to ghadb user gha_etl using 'jawrar#12' 
+ db2 load query table GHA_ETL.FCT_GGSN_BASE
+
+
+ step 4 monitor load status  
+ /shared_data_gha/ftpdata/AIR_GHA_ERIC_GGSN_R6_1305/outdata/GGSN_12 
+
+db2 terminate 
+
+db2 connect to ghadb user gha_etl using 'Golmal#12'
+
+nohup db2 "load client from '/shared_data_gha/ftpdata/GGSN/GGSN12ad' of del modified by NOCHARDEL COLDEL~ INSERT INTO GHA_ETL.FCT_GGSN_BASE INDEXING MODE INCREMENTAL" >>GGSN12ad.out & 
+
+nohup db2 "load client from '/shared_data_gha/ftpdata/GGSN/LOAD/GGSN12ab' of del modified by NOCHARDEL COLDEL~ INSERT INTO GHA_ETL.FCT_GGSN_BASE INDEXING MODE INCREMENTAL" > GGSN12ab.out &
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ For Download file from server $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Step 1 :
+sftp -oPort=922 raorv@10.56.96.12 
+
+Step 2 :
+cd /back_data/AIR_KEN_ERIC_CCN_CS5
+
+Step 3 :{{{(mput *)/mget}}{to dl,mput..to upload..mput}
+get CDRCCN_03-Blk32768Blk-6686-20160612090434-2156-KECCN3.bz2
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+
+
+find . -type f -name '*FCT_IN_DATA_CS5_STG.CSV'|xargs -I {} mv {} /out_data_2/LOAD/FCT_IN_DATA 
+
+db2 "update UM_LOGIN_MASTER set status = 'Y' where user_name = 'KENYA_ADMIN' "
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ls|cut -c-13|sort -n|uniq -c
+
+for i in `ls`;do echo $i ----- `ls $i|wc -l`;done
+
+find . -type f -size -1 -exec rm -f {} \;
+
+for i in `find . -type d -name "LOAD"`;do echo $i ----- `ls $i|wc -l`;done 
+
+find . -type f -name "*.failed"|while read f; do new=`echo $f|awk -F ".failed" '{print $1}'`; mv $f $new; echo $f; done
+
+find . -type f -name "*.failed"|while read f; do new=`echo $f|awk -F ".failed" '{print $1}'`; mv $f $new.out; echo $f; done
+
+nohup db2 "load client from '/out_data_uga/AIR_UGA_HUW_OCS_MON/LOAD/MON_4' of del modified by NOCHARDEL COLDEL~ INSERT INTO ETL_UGA.FCT_IN_RECHARGE_SYSTEM INDEXING MODE INCREMENTAL" >>MON_4.out &
+
+for i in `cat PGW_PRO_12.out`;do  if [[ `cat back_12.out|grep -c $i` -eq 0 ]]; then  echo $i; fi; done
+
+for i in `ls |grep bz2`; do mv $i /back_data/AIR_NGA_ERIC_PGW/backup/ ; done & 
+
+for i in `cat CCN_BKP_25.txt`;do mv $i* /shared_data/raftp/AIR_NGA_CCN_VOICE_CS5/RAW_LKCCN_25th/BKP_CCN/;done
+
+nohup db2 "load client from '/out_data/AIR_NGA_HUW_MSC/LOAD/MSCBIG.out' of del modified by NOCHARDEL COLDEL~ INSERT INTO ORV5_ETL.FCT_NGA_ERIC_SWT 
+INDEXING MODE INCREMENTAL" >>MSC.out &
+
+
+db2 ? SQL0668N
+
+
+find . -type f -name "*KIN*"| cut -c17-24|sort -n|uniq -c
+find . -type f -name "*GOM*"| cut -c11-18|sort -n|uniq -c
+find . -type f -name "*LUB*"| cut -c11-18|sort -n|uniq -c
+
+For mving files
+
+for i in `cat test1.txt`; do cp $i un_pro/; done;
+
+for i in `cat gsn.txt`; do rm -f $i*; done 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+BZIP files
+
+bzip2 *20160712* & 
+
+
+For checking memory
+free -g 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+FOR INGEST LOADING
+
+nohup db2 -x "INGEST FROM FILE /shared_data_gha/ftpdata/GGSN/NXT/GGSN12ad format delimited by '~' dumpfile  GGSN.dmp EXCEPTION TABLE GHA_ETL.FCT_GGSN_ERR messages  GGSN.log restart off insert into GHA_ETL.FCT_GGSN_BASE" >GGSN.csv.out & 
+
+nohup db2 -x "INGEST FROM FILE /poller_data_uga/GGSN_LOAD/GGSN_1 format delimited by '~' dumpfile  GGSN.dmp EXCEPTION TABLE ETL_UGA.FCT_GPRS messages  GGSN.log restart off insert into ETL_UGA.FCT_GPRS" >GGSN_1.out &
+
+
+For monitor  ingest
+
+db2 ingest list
+
+
+*******************************************************************************
+
+For Finding table name from ETL
+
+/orvappl_uga/raorvuga/IRMS-DB2/connectiva-etl/repository/FILE/AIR_UGA_HUW_EGSN_rep/0.01/AIR_UGA_HUW_EGSN 
+
+more *.gml|grep -i table 
+
+
+for spliting CSV
+
+split -b 20480m ggsn_1 ggsn_1
+
+split -b 20480m DATA_1 /shared_data/DATA_1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+/orvlog/IBM_LOG/LOGS/20160802/DUMP
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+For Tanzania : 
+
+db2 "select count (1),status from etl_purge_status group by status "
+
+db2 "select count(*), substr(fct_tbl,1,30), substr(status,1,15) from etl_purge_status group by status,fct_tbl"
+..............................................................
+
+/poller_data/VMS_20160801
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+
+For removing load pending state of table
+
+db2 load from /dev/null of del terminate into ORV5ETL.FCT_IN_DATA_CS5
+
+db2 load from /dev/null of del messages /shared_data/SDP_MA_CS16.log terminate into ORV5_ETL.FCT_SDP_MA_CS16
+
+Note : Please be sure before executing the above command the keyword "terminate" is only used for resuming the normal state from load pending state of table.
+
+"""""""""""""""""""""""""""""""""""""""""" FOR CHECKING USER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+cat /etc/group|grep -i ramb
+
+
+cat /etc/passwd|grep -i raftp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+db2 "select process_status,org_res_name,org_res_id from orv5_sys.odc_stat_input_resource  where org_res_name like 'SDPOUTPUTCDR%'" 
+
+db2 describe table odc_stat_loading
+
+
+db2 "select LOAD_STATUS, TOTAL_RECORD, UPLOADED_RECORD,DISCARD_RECORD from odc_stat_loading where ORG_RES_ID = '2493047' "
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Manual file load from loader
+
+
+load client from /out_data/AIR_NGA_GSN/MRG/NGA_GSN_30_01_2017_01_00_27.out of del modified by coldel~ messages /orvlog/NDAS_LOG/LOGS/20170130/DUMP/NGA_GSN_30_01_2017_01_00_27.out  insert into ORV5_ETL.FCT_GPRS for exception ORV5_ETL.FCT_GPRS_ERR NONRECOVERABLE
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+for i in `ls *mon20160627*|head  -5000`; do cp $i /poller_data_uga/AIR_UGA_HUW_OCS_MON/; bzip2 -f $i; mv $i* /back_data_uga/AIR_UGA_HUW_OCS_MON/backup/; done 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+For file downloading
+
+sftp -oport=922 raorv@10.56.96.27
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Cut Command
+
+ls|cut -c1-14|sort -n|uniq -c
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+crontab -l|grep -v ^#
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+For terminate the process
+
+kill %1 
+
+
+
+
+
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ For Checking Partition ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+db2 "select TABNAME, max(DATAPARTITIONNAME), min(DATAPARTITIONNAME), count(1) from syscat.datapartitions where tabname in (select table_name from partitioned_tbl_list where table_name not like '%ERR') and tabschema='ORV5_ETL' and DATAPARTITIONNAME like 'DATE_2%' group by TABNAME order by 2 with ur" 
+
+
+db2 "select DATAPARTITIONNAME from syscat.datapartitions where tabname='FCT_SV_CRM_USER_EQUIP'" 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+For Uploading the file
+
+scp -r -P 922 (filename) username@IP:Path where to put the file
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+For KPI run
+
+nohup /bin/sh -x /orvappl_gha/raorv_gha/IBM_NDAS_HOME/script/NEW_GHANA_KPI_v3.sh 2016-12-07 PR-PA-008 &
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+[raorv@CGABRAMLAPZP01 bin]$ pwdx 14914
+14914: /orvappl/raorv/MIC_Scripts/Operation
+
+
+
+db2 "select trunc(PROCESS_DATE_KEY) Process_Date, count (distinct file_name) File_Count, count(1) Record_Count from ORV5_ETL.DIM_SUBS_IN_BASE where PROCESS_DATE_KEY BETWEEN '2017-01-21 00:00:00.0' AND '2017-01-21 23:59:59.0' group by trunc(PROCESS_DATE_KEY) ORDER BY trunc(PROCESS_DATE_KEY) WITH UR"
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+For SDR Value update
+
+db2 "insert into dim_ra_mast_sdr values ('1.351330',sysdate,'USD',sysdate,sysdate,'201707','8.',838.37864)"
+
+db2 "select * from dim_ra_mast_sdr order by SDR_MON_YR" 
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+For Index Checking
+
+db2 "SELECT tabname, indname, iid,index_partitioning, datapartitionid,  index_object_l_size, index_object_p_size, index_requires_rebuild, large_rids FROM TABLE(sysproc.admin_get_index_info('T','ORV5_ETL','DIM_CCN_ACCU_INFO_CS5')) AS t with ur"
+
+
+db2 "select file_name from fct_gprs where event_date between '2017-09-01' and '2017-09-01' fetch first 5 rows only with ur"
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+db2 "select substr(COLLECTOR_ID,1,70),FEED_STATUS,PROCESS_STATUS ,count(*) from ODC_STAT_INPUT_RESOURCE group by substr(COLLECTOR_ID,1,70),FEED_STATUS,PROCESS_STATUS"
+
+db2 "select * from (select x.file_name,x.cnt,y.TOTAL_RECORD from (select count(*) cnt,file_name from FCT_IN_RECHARGE_SYSTEM_CS5 where EVENT_DATE between '2018-01-23-00.00.00' and '2018-01-23-23.59.59' group by file_name) x,(select substr(org_res_name,1,57) filename,a.org_res_id,b.total_record from odc_hist_stat_input_resource a,odc_hist_stat_loading b where a.org_res_name like 'AIROUTPUTCDR 180123%' and a.org_res_id=b.org_res_id) y where x.file_name=y.filename) where cnt=2*total_record" 
+
+
+db2 "select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) from orv_sys1.odc_stat_input_resource where res_path like '%CCN%' and process_start_time >sysdate -1 and process_end_time is not null group by to_char(process_start_time,'YYYYMMDD HH24') order by 1"
+
+db2 "select file_name,count(1) from FCT_IN_RECHARGE_SYSTEM_CS5 where TRANSACTION_TIME_SLOT_KEY between '2017-07-11-00.00.00' and '2017-07-18-00.00.00' and file_name in ('AIROUTPUTCDR_4005_0445_20170712-204459.AIR','AIROUTPUTCDR_4005_0514_20170712-232428.AIR') group by file_name with ur"
+
+
+db2 "select to_char(process_start_time,'YYYYMMDD HH24') hourly ,count(1) from ORV5_SYS.odc_stat_input_resource where feed_start_time > to_date ('02/21/2015 08:00:00','MM/DD/YYYY HH24:MI:SS') and process_start_time > sysdate -8 and process_end_time is not null group by to_char(process_start_time,'YYYYMMDD HH24') order by 1"
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+db2 "alter table ORV5_ETL.FCT_IN_DATA_CS5 detach partition PART_NOV_17 into table ORV5_ETL.FCT_IN_DATA_CS5_PART_NOV_17" 
+
+
+DB2 Look
+
+
+db2 "export to MSC_2.csv OF DEL MODIFIED BY NOCHARDEL  select * "
+
+db2look -d bfadb -i orv5_etl -w 'teetoo#12' -t FCT_IN_VOICE_CS5 -a -e -x -o VOICE.sql
+
+
+db2look -d ghadb -z gha_etl -e -dp -x -t FCT_GGSN_BASE
+
+db2 "select tabname from syscat.tables where tabname like '%CUSTOM%'"
+
+
+db2 "delete from etl_purge_status where status='-968' and rownum<11 with ur"
+
+
+db2 "select card*AVGROWSIZE/1024/1024/1024 as size_GB,substr(tabname,1,50) as table_name,substr (INDEX_TBSPACE,1,40) tblspace, COMPRESSION from syscat.tables where tabname like 'FCT_SMSC' order by card*AVGROWSIZE/1024/1024/1024 desc"  
+
+
+db2 "select COLLECTOR_ID,ORG_RES_NAME,ORG_RES_ID,PROCESS_STATUS from orv_sys1.odc_hist_stat_input_resource where COLLECTOR_ID like '%HLR%' and ORG_RES_NAME like '%HLR%20170911%'"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Ingest Loading
+
+db2 -x "INGEST FROM FILE CCNCDR44-02-Blk32768Blk-2613-20180419181110-4750-NECCN5_DIM_CCN_ACCU_INFO_ASCIIOut_DIM_CCN_ACCU_INFO.CSV  FORMAT DELIMITED BY '~' EXCEPTION TABLE orv5_etl.DIM_CCN_ACCU_INFO_CS5_ERR MESSAGES HLR.log RESTART OFF INSERT INTO orv5_etl.DIM_CCN_ACCU_INFO_CS5"
+
+______________________________________________________________
+
+
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL3' from orv_sys2.odc_stat_input_resource where
+res_path like '%CCN%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL6' from orv_sys5.odc_stat_input_resource where
+res_path like '%CCN%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24')
+union
+select to_char(process_start_time,'YYYYMMDD HH24') hourly, count(1) ,'ETL8' from orv_sys8.odc_stat_input_resource where
+res_path like '%CCN%'  and process_status ='SUCCESS'
+group by to_char(process_start_time,'YYYYMMDD HH24') order by 1 desc
+
+
+find /out_data/raorv/out_data/ETSUB/AIR_NGA_ERIC_PGW_DETAIL/ -maxdepth 1 -type f -name '*CSV' -mtime +1 -exec mv {} Deepangi/ \;
+
+2371134
+Oesac@yln94
+
+nohup sqlldr ORV5_ETL/ORV5_ETL@RAMLANG1 data=BIG3.out control=FCT_ERIC_NGA_PGW_DETAI_cntr.ctl log=log_1.log &
+
+nohup sqlldr ORV5_ETL/ORV5_ETL@RAMLANG1 data=BIG2.out control=FCT_ERIC_NGA_PGW_DETAI_cntr.ctl log=log_1.log &
+
+nohup sqlldr ORV5_ETL/ORV5_ETL@RAMLANG2 data=file_names_sept.out control=RECON_TABLE_ETL1.ctl log=log_1.log &
+
+
+
+select count(*),TARGET_TABLE_NAME from orv5sys1.odc_STAT_LOADING group by TARGET_TABLE_NAME
+
+
+CREATE TABLE ORV5_ETL.AIR_RECON AS
+SELECT  DISTINCT FILE_NAME FROM ORV5_ETL.FCT_AIR_RECHARGE_MAIN WHERE EVENT_DATE BETWEEN TO_DATE('2019-08-25 00:00:00', 'YYYY-MM-DD HH24:MI:SS') AND TO_DATE('2019-09-13 00:00:00', 'YYYY-MM-DD HH24:MI:SS');
+
+COMMIT;
+SELECT COUNT(*) FROM ORV5_ETL.AIR_RECON
+
+DROP TABLE ORV5_ETL.AIR_RECON
+
+SELECT * FROM ORV5_ETL.AIR_BACKUP
+select count(*) from ORV5_ETL.AIR_RECON
+
+CREATE TABLE ORV5_ETL.AIR_BACKUP (FILE_NAME VARCHAR2 (200))
+
+SELECT count(*) FROM ORV5_ETL.AIR_BACKUP
+
+CREATE TABLE ORV5_ETL.AIR_RECON AS
+SELECT  DISTINCT FILE_NAME FROM ORV5_ETL.FCT_AIR_RECHARGE_MAIN WHERE
+
+select * from ORV5_ETL.AIR_RECON where file_name not like '%AIR'
+
+CREATE TABLE ORV5_ETL.AIR_TOBPRO AS
+SELECT  FILE_NAME FROM ORV5_ETL.AIR_BACKUP MINUS SELECT  FILE_NAME FROM ORV5_ETL.AIR_RECON;
+
+SELECT count (*) FROM ORV5_ETL.AIR_TOBPRO
+
+SELECT * FROM ORV5_ETL.AIR_TOBPRO WHERE FILE_NAME NOT IN (SELECT DISTINCT FILE_NAME FROM ORV5_ETL.FCT_AIR_RECHARGE_MAIN WHERE EVENT_DATE BETWEEN TO_DATE('2019-08-24 00:00:00', 'YYYY-MM-DD HH24:MI:SS') AND TO_DATE('2019-09-14 00:00:00', 'YYYY-MM-DD HH24:MI:SS'))
+
+
+
+find . -maxdepth 1 -type f  -mtime -1 -exec mv {} AIR_GAB_ERIC_PGW_ERIC_GGSN_LCF/ \;
+
+ select org_res_id, target_table_name,load_status ,SUBSTR(bad_filename, 57,87) from orv5sys2.odc_hist_stat_loading where org_res_id in (
+  select org_res_id from  ORV5SYS2.odc_hist_stat_input_resource where org_res_name in (  select FILE_NAME from ORV5_ETL.RECON_TABLE
+  
+  )) and load_status ='SUCCESS' and target_table_name='FCT_IN_VOICE_CS16';

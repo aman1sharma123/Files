@@ -1,0 +1,106 @@
+#!/usr/bin/bash
+. ~/.bash_profile
+DB2_HOME=/home/raorv/sqllib			##
+sch='orv5_sys'					##
+echo $sch
+self_pid=$$
+ps_cnt=`ps -ef | grep connectiva-base | grep -v ${self_pid} | grep -cv grep`
+
+self_pid=$$
+ps_cnt=`ps -ef | grep connectiva-base | grep -v ${self_pid} | grep -cv grep`
+
+if [[ ${ps_cnt} -gt 0 ]]
+then
+	echo "Process already running `ps -ef | grep connectiva | grep -v ${self_pid} | grep -v grep`"
+	exit
+fi
+
+
+
+source /orvappl/raorv/iCTVA_Scripts/GABON_INGEST_RELOAD/GLOBAL_DB_CREDENTIAL/dbuser-env.sh		##
+source /orvappl/raorv/iCTVA_Scripts/GABON_INGEST_RELOAD/GLOBAL_DB_CREDENTIAL/key-store.sh		##
+
+ 
+
+DB2_ETL_PASSWD=`echo $DB2_ETL_PASSWD| openssl enc -aes-256-cbc -a -d -salt -pass pass:$KEY_CONF`
+
+
+echo "Starting the execution.."
+cd /orvappl/raorv/MIC_Scripts/Operation					##
+db2 connect to GABDB user ORV5_ETL using $DB2_ETL_PASSWD			##
+
+if [[ $? -ge 4 ]]; then
+
+        echo "Failed to connect to DATABASE"
+        exit 1 ;
+
+        else
+		echo "connected"
+echo "DB Purging started"
+db2 -x "insert into $sch.ODC_HIST_STAT_LOADING select * from $sch.ODC_STAT_LOADING ";
+db2 -x "insert into $sch.ODC_HIST_STAT_OUTPUT_RESOURCE select * from $sch.ODC_STAT_OUTPUT_RESOURCE ";
+db2 -x "insert into $sch.ODC_HIST_STAT_INPUT_RESOURCE select * from $sch.ODC_STAT_INPUT_RESOURCE";
+db2 -x "insert into $sch.ODC_HIST_STAT_INSTANCE select * from $sch.ODC_STAT_INSTANCE ";
+db2 -x "delete from $sch.ODC_STAT_LOADING ";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_OUTPUT_RESOURCE";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_INPUT_RESOURCE";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_INSTANCE ";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_LINK";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_TASK";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_POST_PROCESSING";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_STAT_DUPLICATE";
+db2 -x "commit";
+db2 -x "ALTER TABLE $sch.ODC_STAT_LOADING ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_OUTPUT_RESOURCE ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_INPUT_RESOURCE ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_INSTANCE ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_LINK ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_TASK ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_POST_PROCESSING ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "ALTER TABLE $sch.ODC_STAT_DUPLICATE ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE";
+db2 -x "delete from $sch.ODC_HIST_STAT_LOADING where trunc(LOAD_START_TIME) <trunc(sysdate -30)";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_HIST_STAT_OUTPUT_RESOURCE where trunc(START_TIME) <trunc(sysdate -30) ";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_HIST_STAT_INPUT_RESOURCE where trunc(PROCESS_START_TIME) <trunc(sysdate -30)";
+db2 -x "commit";
+db2 -x "delete from $sch.ODC_HIST_STAT_INSTANCE where trunc(CREATE_TIME) <trunc(sysdate -30)";
+db2 -x "commit";
+echo "clean up  done "
+
+
+
+		fi
+
+
+echo "Checking  Applications status ...."
+
+echo "Starting Applications as DB is up"
+
+
+dt=`date +"%Y%m%d"`
+cd /orvappl/raorv/IRMS-DB2/connectiva-base/bin			##
+cp nohup.out nohup.bkp
+rm nohup.out
+nohup ./StartBase.sh &
+sleep 20
+echo "Base Starting Confirmation `cat /orvappl/raorv/IRMS-DB2/connectiva-base/bin/nohup.out|grep -i 'Started in'`"		##
+
+echo "Now Starting ETL ...."
+cd /orvappl/raorv/IRMS-DB2/connectiva-etl/bin			##
+cp nohup.out nohup.bkp
+rm nohup.out
+nohup ./StartEtl.sh &
+sleep 25
+echo "ETL Starting Confirmation `cat /orvappl/raorv/IRMS-DB2/connectiva-etl/bin/nohup.out|grep -i 'Started in'`"		##
+
+echo "Process already running `ps -ef | grep -i connectiva`
+
+echo Thank You"

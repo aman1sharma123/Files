@@ -1,0 +1,28 @@
+first start base ,then etl
+
+
+base
+cd ..
+rm -rf work log tmp data
+cd bin
+rm nohup.out
+
+nohup ./StartBase.sh &..enter again
+tail -f nohup.out...till started written
+
+
+
+
+
+
+
+START ETL:
+
+etl
+./StartEtl.sh
+
+tail-f nohup.out..vm hault
+
+SR6325334
+
+

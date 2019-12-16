@@ -1,0 +1,20 @@
+CONGOB
+
+cd shared_data/ftpdata
+
+cd HW_HLR        ###any currently processing dir
+
+###HSS9860_8_20191006013001.tar   ###pick any file for untar
+
+
+tar -xvf OK_HSS9860_8_20191006013001.tar
+
+ls -lrt
+
+###now pick those files for which size is more and move it to ###poller
+
+mv HSS9860_8_20191006013001_0_data.txt HSS9860_8_20191006013001_1_data.txt /poller_data/AIR_COG_HUW_HLR/
+
+
+###now check process stat and loading stat by using file name
+

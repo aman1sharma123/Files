@@ -1,0 +1,3 @@
+$base
+$ cd ../xml-repository/etl/
+$ more *xml|grep -i orv

@@ -1,0 +1,1 @@
+for i in `ls|grep -v bz2|head -20000`; do bzip2 $i; done &
